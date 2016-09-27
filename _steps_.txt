@@ -1,0 +1,188 @@
+holy@Holy:~/Mylab/my_notes$ rails g scaffold Book name:string picture:string intro:text pathw:string pathl:string
+Running via Spring preloader in process 4531
+      invoke  active_record
+      create    db/migrate/20160927024521_create_books.rb
+      create    app/models/book.rb
+      invoke    test_unit
+      create      test/models/book_test.rb
+      create      test/fixtures/books.yml
+      invoke  resource_route
+       route    resources :books
+      invoke  scaffold_controller
+      create    app/controllers/books_controller.rb
+      invoke    erb
+      create      app/views/books
+      create      app/views/books/index.html.erb
+      create      app/views/books/edit.html.erb
+      create      app/views/books/show.html.erb
+      create      app/views/books/new.html.erb
+      create      app/views/books/_form.html.erb
+      invoke    test_unit
+      create      test/controllers/books_controller_test.rb
+      invoke    helper
+      create      app/helpers/books_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/books/index.json.jbuilder
+      create      app/views/books/show.json.jbuilder
+      create      app/views/books/_book.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/books.coffee
+      invoke    scss
+      create      app/assets/stylesheets/books.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.scss
+holy@Holy:~/Mylab/my_notes$
+==E:页面跳转报错：wrong number of arguments (given 2, expected 1)
+holy@Holy:~/Mylab/my_notes$ bundle install
+Using rake 11.3.0
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using tzinfo 1.2.2
+Using activesupport 4.2.5.1
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using nokogiri 1.6.8
+Using rails-deprecated_sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using loofah 2.0.3
+Using rails-html-sanitizer 1.0.3
+Using actionview 4.2.5.1
+Using rack 1.6.4
+Using rack-test 0.6.3
+Using actionpack 4.2.5.1
+Using globalid 0.3.7
+Using activejob 4.2.5.1
+Using mime-types-data 3.2016.0521
+Using mime-types 3.1
+Using mail 2.6.4
+Using actionmailer 4.2.5.1
+Using activemodel 4.2.5.1
+Using arel 6.0.3
+Using activerecord 4.2.5.1
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using byebug 9.0.5
+Using coffee-script-source 1.10.0
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Using thor 0.19.1
+Using railties 4.2.5.1
+Using coffee-rails 4.1.1
+Using concurrent-ruby 1.0.2
+Using multi_json 1.12.1
+Using jbuilder 2.6.0
+Using jquery-rails 4.2.1
+Using mysql2 0.4.2
+Using bundler 1.10.4
+Using sprockets 3.7.0
+Using sprockets-rails 3.2.0
+Using rails 4.2.5.1
+Using rdoc 4.2.2
+Using sass 3.4.22
+Using tilt 2.0.5
+Using sass-rails 5.0.6
+Using sdoc 0.4.1
+Using spring 1.7.2
+Using turbolinks 1.2.0
+Using uglifier 2.1.1
+Using web-console 2.0.0
+Bundle complete! 12 Gemfile dependencies, 56 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+==E:执行bundle update重新插入mysql报错
+holy@Holy:~/Mylab/my_notes$ bundle update
+Fetching gem metadata from https://ruby.taobao.org/...........
+Fetching version metadata from https://ruby.taobao.org/..
+Resolving dependencies.............................................
+Using rake 11.3.0
+Installing mysql2 0.4.4 (was 0.4.2) with native extensions
+
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    current directory: /home/holy/Programs/rubystack/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4/ext/mysql2
+/home/holy/Programs/rubystack/ruby/bin/ruby -r ./siteconf20160927-5344-10blned.rb extconf.rb
+checking for ruby/thread.h... yes
+checking for rb_thread_call_without_gvl() in ruby/thread.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_wait_for_single_fd()... no
+checking for rb_hash_dup()... no
+checking for rb_intern3()... no
+-----
+Using mysql_config at /home/holy/Programs/rubystack/mysql/bin/mysql_config
+-----
+checking for mysql.h... yes
+checking for errmsg.h... yes
+checking for mysqld_error.h... yes
+-----
+Setting libpath to /home/holy/Programs/rubystack/mysql/lib
+-----
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/holy/Programs/rubystack/ruby/lib/ruby/gems/2.3.0/extensions/x86_64-linux/2.3.0-static/mysql2-0.4.4/mkmf.log
+
+current directory: /home/holy/Programs/rubystack/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4/ext/mysql2
+make "DESTDIR=" clean
+
+current directory: /home/holy/Programs/rubystack/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4/ext/mysql2
+make "DESTDIR="
+compiling client.c
+In file included from ./client.h:18:0,
+                 from ./mysql2_ext.h:39,
+                 from client.c:1:
+/home/holy/Programs/rubystack/ruby/include/ruby-2.3.0/ruby/backward/rubysig.h:14:2: warning: #warning rubysig.h is obsolete [-Wcpp]
+ #warning rubysig.h is obsolete
+  ^
+In file included from ./mysql2_ext.h:39:0,
+                 from client.c:1:
+./client.h:22:1: error: static declaration of ‘rb_thread_call_without_gvl’ follows non-static declaration
+ rb_thread_call_without_gvl(
+ ^
+In file included from ./mysql2_ext.h:28:0,
+                 from client.c:1:
+/home/holy/Programs/rubystack/ruby/include/ruby-2.3.0/ruby/thread.h:28:7: note: previous declaration of ‘rb_thread_call_without_gvl’ was here
+ void *rb_thread_call_without_gvl(void *(*func)(void *), void *data1,
+       ^
+In file included from ./mysql2_ext.h:39:0,
+                 from client.c:1:
+./client.h: In function ‘rb_thread_call_without_gvl’:
+./client.h:29:3: error: ‘TRAP_BEG’ undeclared (first use in this function)
+   TRAP_BEG;
+   ^
+./client.h:29:3: note: each undeclared identifier is reported only once for each function it appears in
+./client.h:31:3: error: ‘TRAP_END’ undeclared (first use in this function)
+   TRAP_END;
+   ^
+client.c: At top level:
+cc1: warning: unrecognized command line option "-Wno-used-but-marked-unused" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-static-in-inline" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-reserved-id-macro" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-missing-variable-declarations" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-documentation-unknown-command" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-disabled-macro-expansion" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-covered-switch-default" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-conditional-uninitialized" [enabled by default]
+make: *** [client.o] Error 1
+
+make failed, exit code 2
+
+Gem files will remain installed in /home/holy/Programs/rubystack/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4 for inspection.
+Results logged to /home/holy/Programs/rubystack/ruby/lib/ruby/gems/2.3.0/extensions/x86_64-linux/2.3.0-static/mysql2-0.4.4/gem_make.out
+An error occurred while installing mysql2 (0.4.4), and Bundler cannot continue.
+Make sure that `gem install mysql2 -v '0.4.4'` succeeds before bundling.
+holy@Holy:~/Mylab/my_notes$ 
+
+==A: 问题解决，是数据库的原因，指定数据库的版本(本机安装不了其他版本数据库！)
+# Use mysql as the database for Active Record
+gem 'mysql2', '0.4.2'   # gem 'mysql2', '>= 0.3.13', '< 0.5'
+
+==A：显示缩略图
+http://bbs.csdn.net/topics/370132403
+
+

@@ -1,0 +1,45 @@
+== README
+Video_Notes
+KEYS:
+  video notes sort search
+
+==videos  htmls  books==
+TABLE:
+videos && htmls
+  * name	[Video name]
+  * size	[File size]
+  * sort	[Videos main sort]
+  * group	[Group for videos, combine notes, share notes, can be null]
+  * page	[Main page url]
+  * pathw	[Web path]
+  * pathl	[Local path]
+  * docname	[Related articles name]
+  * docurl	[Related articles url]
+  * 
+  * notes	[About this video's notes]c
+  * sequence  [Books No.]?
+One video one note.
+
+
+One book many notes
+books
+  * name  [Books name]
+  * picture [Picture link]
+  * intro	[Short describe]
+  * pathw	[Web path]
+  * pathl	[Local path]
+  * 
+  * <tt>rails g scaffold Book name:string picture:string intro:text pathw:string pathl:string</tt>
+notes
+  * book_id	[Make relation]
+  * name	[Note name]
+  * page	[Page number]
+  * unit	[Unit position]
+  * notes	[]
+  * practice	[If have practices]
+  * refername	[Reference name]
+  * referurl	[Reference url]
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+

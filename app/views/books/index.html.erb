@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Books</h1>
+<script type="text/javascript">
+  window.onload = function() {
+    var pvws = document.getElementsByTagName('pvw');
+    for( var i = 0; i < pvws.length; i++){
+      pvws[i].onmouseover = function(){
+        // alert(1)
+        var url = this.firstChild.getAttribute('href');
+        var img = document.createElement('img');
+        img.src = url;
+        img.style.position = 'absolute';
+        img.style.width = '80px';  //图片高度，高宽只设置一个时，浏览器会自动计算另一个值，实现等比例缩放
+        this.appendChild(img);
+      }
+      pvws[i].onmouseout = function(){
+        // alert(2)
+        // var img = document.getElementById('demo').getElementsByTagName('img')[0];
+        // img.parentNode.removeChild(img);
+        var img = document.getElementsByTagName('img')[0];
+        pvws.removeChild(img);
+      }
+    }
+  }
+</script>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Picture</th>
+      <th>Intro</th>
+      <th>Pathw</th>
+      <th>Pathl</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="demo">
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.name %></td>
+      <td><pvw><a href="<%= book.picture %>">666</a></pvw></td>
+      <td><%= book.intro %></td>
+      <td><%= book.pathw %></td>
+      <td><%= book.pathl %></td>
+      <td><%= link_to 'Show', book %></td>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Book', new_book_path %>
