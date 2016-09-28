@@ -1,0 +1,49 @@
+<%= form_for(@bknote) do |f| %>
+  <% if @bknote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bknote.errors.count, "error") %> prohibited this bknote from being saved:</h2>
+
+      <ul>
+      <% @bknote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :book_id %><br>
+    <%= f.number_field :book_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :page %><br>
+    <%= f.number_field :page %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br>
+    <%= f.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="field">
+    <%= f.label :practice %><br>
+    <%= f.text_area :practice %>
+  </div>
+  <div class="field">
+    <%= f.label :referdoc %><br>
+    <%= f.text_field :referdoc %>
+  </div>
+  <div class="field">
+    <%= f.label :referurl %><br>
+    <%= f.text_field :referurl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

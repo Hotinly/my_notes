@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_id: 1
+  name: MyString
+  page: 1
+  unit: MyString
+  note: MyText
+  practice: MyText
+  referdoc: MyString
+  referurl: MyString
+
+two:
+  book_id: 1
+  name: MyString
+  page: 1
+  unit: MyString
+  note: MyText
+  practice: MyText
+  referdoc: MyString
+  referurl: MyString

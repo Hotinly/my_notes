@@ -1,9 +1,8 @@
 == README
-Video_Notes
 KEYS:
-  video notes sort search
+====books     |    videos      |     htmls  ====
+books bknotes   videos vdnotes   htmls htnotes
 
-==videos  htmls  books==
 TABLE:
 videos && htmls
   * name	[Video name]
@@ -13,11 +12,12 @@ videos && htmls
   * page	[Main page url]
   * pathw	[Web path]
   * pathl	[Local path]
-  * docname	[Related articles name]
-  * docurl	[Related articles url]
+  * referdoc  [Reference document]
+  * referurl  [Reference url]
   * 
-  * notes	[About this video's notes]c
-  * sequence  [Books No.]?
+  * secnario  [Issue secnario and use secnario]
+  * note	[About this video's notes]c
+  * sequence  [Books No.]?  is local?
 One video one note.
 
 
@@ -28,18 +28,20 @@ books
   * intro	[Short describe]
   * pathw	[Web path]
   * pathl	[Local path]
-  * 
-  * <tt>rails g scaffold Book name:string picture:string intro:text pathw:string pathl:string</tt>
-notes
-  * book_id	[Make relation]
-  * name	[Note name]
-  * page	[Page number]
-  * unit	[Unit position]
-  * notes	[]
+<tt>rails g scaffold Book name:string picture:string intro:text pathw:string pathl:string</tt>
+
+bknotes
+  * book_id [Make relation]
+  * name  [Note name]
+  * page  [Page number]
+  * unit  [Unit position]
+  * note	[The notes]
   * practice	[If have practices]
-  * refername	[Reference name]
+  * referdoc	[Reference document]
   * referurl	[Reference url]
+<tt>rails g scaffold Bknote book_id:integer name:string page:integer unit:string note:text practice:text referdoc:string referurl:string</tt>
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
+`

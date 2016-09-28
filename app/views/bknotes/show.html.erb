@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @bknote.book_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bknote.name %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @bknote.page %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @bknote.unit %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @bknote.note %>
+</p>
+
+<p>
+  <strong>Practice:</strong>
+  <%= @bknote.practice %>
+</p>
+
+<p>
+  <strong>Referdoc:</strong>
+  <%= @bknote.referdoc %>
+</p>
+
+<p>
+  <strong>Referurl:</strong>
+  <%= @bknote.referurl %>
+</p>
+
+<%= link_to 'Edit', edit_bknote_path(@bknote) %> |
+<%= link_to 'Back', bknotes_path %>

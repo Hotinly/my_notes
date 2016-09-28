@@ -185,4 +185,39 @@ gem 'mysql2', '0.4.2'   # gem 'mysql2', '>= 0.3.13', '< 0.5'
 ==A：显示缩略图
 http://bbs.csdn.net/topics/370132403
 
-
+holy@PC:~/Mylab/my_notes$ rails g scaffold Bknote book_id:integer name:string page:integer unit:string note:text practice:text referdoc:string referurl:string
+Running via Spring preloader in process 8175
+      invoke  active_record
+      create    db/migrate/20160927234254_create_bknotes.rb
+      create    app/models/bknote.rb
+      invoke    test_unit
+      create      test/models/bknote_test.rb
+      create      test/fixtures/bknotes.yml
+      invoke  resource_route
+       route    resources :bknotes
+      invoke  scaffold_controller
+      create    app/controllers/bknotes_controller.rb
+      invoke    erb
+      create      app/views/bknotes
+      create      app/views/bknotes/index.html.erb
+      create      app/views/bknotes/edit.html.erb
+      create      app/views/bknotes/show.html.erb
+      create      app/views/bknotes/new.html.erb
+      create      app/views/bknotes/_form.html.erb
+      invoke    test_unit
+      create      test/controllers/bknotes_controller_test.rb
+      invoke    helper
+      create      app/helpers/bknotes_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/bknotes/index.json.jbuilder
+      create      app/views/bknotes/show.json.jbuilder
+      create      app/views/bknotes/_bknote.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/bknotes.coffee
+      invoke    scss
+      create      app/assets/stylesheets/bknotes.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+holy@PC:~/Mylab/my_notes$

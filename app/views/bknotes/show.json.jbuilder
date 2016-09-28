@@ -1,0 +1,1 @@
+json.partial! "bknotes/bknote", bknote: @bknote

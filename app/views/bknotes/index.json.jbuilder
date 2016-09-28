@@ -1,0 +1,1 @@
+json.array! @bknotes, partial: 'bknotes/bknote', as: :bknote

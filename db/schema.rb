@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927024521) do
+ActiveRecord::Schema.define(version: 20160927234254) do
+
+  create_table "bknotes", force: :cascade do |t|
+    t.integer  "book_id",    limit: 4
+    t.string   "name",       limit: 255
+    t.integer  "page",       limit: 4
+    t.string   "unit",       limit: 255
+    t.text     "note",       limit: 65535
+    t.text     "practice",   limit: 65535
+    t.string   "referdoc",   limit: 255
+    t.string   "referurl",   limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string   "name",       limit: 255
