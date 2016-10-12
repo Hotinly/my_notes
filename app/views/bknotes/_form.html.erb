@@ -10,11 +10,18 @@
       </ul>
     </div>
   <% end %>
+  
 
   <div class="field">
-    <%= f.label :book_id %><br>
-    <%= f.number_field :book_id %>
+    <%= f.label :book_name %> 【<%= @books.length %>】<br>
+    
+    <%= f.select(:book_id) do %>
+      <% @books.each do |book| %>
+        <%= content_tag(:option, "#{book.name}", value: "#{book.id}") %>
+      <% end %>
+    <% end %>
   </div>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

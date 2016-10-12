@@ -54,11 +54,17 @@
     </tr>
     <% end %>
 
-<td><pvw><a href="http://static.nipic.com/images/noface.png">666</a></pvw></td> 
+<td>
+<!-- 使用 assets/images/Git.jpg 不行, 需要使用 assets/Git.jpg 或 使用rails中的 image_path 或 image_url -->
+<pvw><a href="assets/blink.gif">666</a></pvw>
+<pvw><a href= <%= image_url 'Git.jpg'%>> img</a></pvw>
+<pvw><a href= <%= image_path('firefox.jpeg') %>> img</a></pvw>
+<pvw><a href="http://static.nipic.com/images/noface.png">666</a></pvw>
 <!-- erb页面相对位置，更在意是否匹配上特性，这里的td会被认为是tr里的元素，解析成
- <tr><td><pvw> XXX </pvw></td></tr>，换成td换成tr不行 -->
-
+ <tr><td><pvw> XXX </pvw></td></tr>，td换成tr不行 -->
+</td>
   </tbody>
 </table>
 <br>
 <%= link_to 'New Book', new_book_path %>
+<%= link_to 'New Bknote', new_bknote_path %>

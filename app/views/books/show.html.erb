@@ -27,3 +27,39 @@
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
+
+<!--  -->
+<h1>Listing Bknotes</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th>Name</th>
+      <th>Page</th>
+      <th>Unit</th>
+      <th>Note</th>
+      <th>Practice</th>
+      <th>Referdoc</th>
+      <th>Referurl</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bknotes.each do |bknote| %>
+      <tr>
+        <td><%= bknote.book_id %></td>
+        <td><%= bknote.name %></td>
+        <td><%= bknote.page %></td>
+        <td><%= bknote.unit %></td>
+        <td><%= bknote.note %></td>
+        <td><%= bknote.practice %></td>
+        <td><%= bknote.referdoc %></td>
+        <td><%= bknote.referurl %></td>
+        <td><%= link_to 'Show', bknote %></td>
+        <td><%= link_to 'Edit', edit_bknote_path(bknote) %></td>
+        <td><%= link_to 'Destroy', bknote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

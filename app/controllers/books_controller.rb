@@ -10,6 +10,9 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    # @book = Book.find(params[:id])  #可省略，第二行 before_action 代替了
+    @bknotes = Bknote.where("book_id = ?", params[:id])  #条件查询语句
+    # @bknotes = Bknote.all
   end
 
   # GET /books/new

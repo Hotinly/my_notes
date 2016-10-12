@@ -15,18 +15,20 @@ class BknotesController < ApplicationController
   # GET /bknotes/new
   def new
     @bknote = Bknote.new
+    # @book = Book.first
+    @books = Book.all
   end
 
   # GET /bknotes/1/edit
   def edit
+    # @book = Book.first
+    @books = Book.all
   end
 
   # POST /bknotes
   # POST /bknotes.json
   def create
-    # @bknote = Bknote.new(bknote_params)
-    @bknote = @book.bknote.new(bknote_params)
-
+    @bknote = Bknote.new(bknote_params)
 
     respond_to do |format|
       if @bknote.save

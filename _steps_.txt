@@ -221,3 +221,28 @@ Running via Spring preloader in process 8175
       invoke  scss
    identical    app/assets/stylesheets/scaffolds.scss
 holy@PC:~/Mylab/my_notes$
+
+2016年10月02日14:57:37
+/home/holy/Mylab/my_notes/app/views/bknotes/_form.html.erb
+  <!-- <div class="field">
+    <%= f.label :booklist %><br>
+    <% @books.each do |book| %>
+      <%= f.text_field :booklist, :value => "#{@book.name}" %>
+    <% end %>
+  </div> -->
+
+2016年10月12日
+【关联查询-下拉列表 select_tag】
+  <div class="field">
+    <%= f.label :book_name %> 【<%= @books.length %>】<br>  #获取了controller中查询出的所有@books。
+    <%= f.text_field :book_name, :value => "#{@books[0].name}" %>  #取出第一个book的值 OK
+    <%= select_tag(:ids, options_for_select([['language', 1],['platform', 2]],2),{class: "Mycls"})%>  #创建了<select><option></option></select>结构，ID和name为ids，后面的2参数表示默认选中第二个选项。
+--下面是完整的写法-- 用each循环取出book的值         选择后value值会赋给book_id ←、
+    <%= f.select(:book_id) do %>     #book_id对应的是bknotes关联的books的外键，↑
+      <% @books.each do |book| %>
+        <%= content_tag(:option, "#{book.name}", value: "{book.id}") %>
+      <% end %>
+    <% end %>
+  </div>
+
+
