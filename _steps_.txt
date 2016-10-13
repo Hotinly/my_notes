@@ -245,4 +245,76 @@ holy@PC:~/Mylab/my_notes$
     <% end %>
   </div>
 
+【2016年10月13日13:11:51 创建blog】
+holy@Holy:~/Mylab/my_notes$ rails g scaffold Blog title:string pathw:string pathl:string category:string secnario:text note:text level:integer tested:boolean referto:string
+Running via Spring preloader in process 5446
+      invoke  active_record
+      create    db/migrate/20161013051247_create_blogs.rb
+      create    app/models/blog.rb
+      invoke    test_unit
+      create      test/models/blog_test.rb
+      create      test/fixtures/blogs.yml
+      invoke  resource_route
+       route    resources :blogs
+      invoke  scaffold_controller
+      create    app/controllers/blogs_controller.rb
+      invoke    erb
+      create      app/views/blogs
+      create      app/views/blogs/index.html.erb
+      create      app/views/blogs/edit.html.erb
+      create      app/views/blogs/show.html.erb
+      create      app/views/blogs/new.html.erb
+      create      app/views/blogs/_form.html.erb
+      invoke    test_unit
+      create      test/controllers/blogs_controller_test.rb
+      invoke    helper
+      create      app/helpers/blogs_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/blogs/index.json.jbuilder
+      create      app/views/blogs/show.json.jbuilder
+      create      app/views/blogs/_blog.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/blogs.coffee
+      invoke    scss
+      create      app/assets/stylesheets/blogs.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss
+holy@Holy:~/Mylab/my_notes$ rake db:migrate
+== 20161013051247 CreateBlogs: migrating ======================================
+-- create_table(:blogs)
+   -> 0.3150s
+== 20161013051247 CreateBlogs: migrated (0.3151s) =============================
+
+holy@Holy:~/Mylab/my_notes$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+  modified:   README.rdoc
+  modified:   _steps_.text                      #<%= f.number_field :page %>
+  modified:   app/views/bknotes/_form.html.erb  #number_field => text_field
+  modified:   config/routes.rb
+  modified:   db/schema.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+  app/assets/javascripts/blogs.coffee
+  app/assets/stylesheets/blogs.scss
+  app/controllers/blogs_controller.rb
+  app/helpers/blogs_helper.rb
+  app/models/blog.rb
+  app/views/blogs/
+  db/migrate/20161013051247_create_blogs.rb
+  test/controllers/blogs_controller_test.rb
+  test/fixtures/blogs.yml
+  test/models/blog_test.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+holy@Holy:~/Mylab/my_notes$ 
+
 

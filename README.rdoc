@@ -7,7 +7,7 @@ TABLE:
 videos && htmls
   * name	[Video name]
   * size	[File size]
-  * sort	[Videos main sort]
+  * category	[Videos main category]
   * group	[Group for videos, combine notes, share notes, can be null]
   * page	[Main page url]
   * pathw	[Web path]
@@ -20,7 +20,24 @@ videos && htmls
   * sequence  [Books No.]?  is local?
 One video one note.
 
+=================================================
+Single table
+blogs
+  * title [The title]
+  * pathw [Web path]
+  * pathl [Local path]
+  * category  [The category]
+  * secnario  [Issue secnario and use secnario]
+  * note      [The notes]
+  * level     [lv1~lv5]
+  * tested    [Boolean]
+  * referto   [With intro and url. Parse by the specific flag]
+#  * referdoc  [Reference document]
+#  * referurl  [Reference url]
 
+# Add table: dict_category
+
+=================================================
 One book many notes
 books
   * name  [Books name]

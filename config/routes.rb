@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   resources :bknotes
   resources :books
   # The priority is based upon order of creation: first created -> highest priority.

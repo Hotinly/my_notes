@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  pathw: MyString
+  pathl: MyString
+  category: MyString
+  secnario: MyText
+  note: MyText
+  level: 1
+  tested: false
+  referto: MyString
+
+two:
+  title: MyString
+  pathw: MyString
+  pathl: MyString
+  category: MyString
+  secnario: MyText
+  note: MyText
+  level: 1
+  tested: false
+  referto: MyString
