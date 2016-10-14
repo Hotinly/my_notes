@@ -1,64 +1,50 @@
-== README
-KEYS:
-====books     |    videos      |     htmls  ====
-books bknotes   videos vdnotes   htmls htnotes
+Personal rails app for taking notes. 
+===Category: |  Book  |  Video  |  Blog  |
 
-TABLE:
-videos && htmls
-  * name	[Video name]
-  * size	[File size]
-  * category	[Videos main category]
-  * group	[Group for videos, combine notes, share notes, can be null]
-  * page	[Main page url]
-  * pathw	[Web path]
-  * pathl	[Local path]
-  * referdoc  [Reference document]
-  * referurl  [Reference url]
-  * 
-  * secnario  [Issue secnario and use secnario]
-  * note	[About this video's notes]c
-  * sequence  [Books No.]?  is local?
-One video one note.
+*TABLES:*
+---
+====videos [<i>blogs+...</i>]
+  * ...
+  * name  [Video name]
+  * size  [File size]
+  * sequence?  is local?
 
-=================================================
-Single table
-blogs
-  * title [The title]
-  * pathw [Web path]
-  * pathl [Local path]
+---
+====blogs [<i>single table</i>]
+  * title     [The title]
+  * pathw     [Web path]
+  * pathl     [Local path]
   * category  [The category]
   * secnario  [Issue secnario and use secnario]
   * note      [The notes]
   * level     [lv1~lv5]
   * tested    [Boolean]
   * referto   [With intro and url. Parse by the specific flag]
-#  * referdoc  [Reference document]
-#  * referurl  [Reference url]
+  * # referdoc  [Reference document]
+  * # referurl  [Reference url]
+  * # Add table: dict_category  +++
+<tt>rails g scaffold Blog title:string pathw:string pathl:string category:string secnario:text note:text level:integer tested:boolean referto:string</tt>
 
-# Add table: dict_category
-
-=================================================
-One book many notes
-books
-  * name  [Books name]
+---
+====books [<i>one book many notes</i>]
+  * name    [Books name]
   * picture [Picture link]
-  * intro	[Short describe]
-  * pathw	[Web path]
-  * pathl	[Local path]
+  * intro   [Short describe]
+  * pathw   [Web path]
+  * pathl   [Local path]
 <tt>rails g scaffold Book name:string picture:string intro:text pathw:string pathl:string</tt>
 
-bknotes
+====bknotes
   * book_id [Make relation]
-  * name  [Note name]
-  * page  [Page number]
-  * unit  [Unit position]
-  * note	[The notes]
-  * practice	[If have practices]
-  * referdoc	[Reference document]
-  * referurl	[Reference url]
+  * name    [Note name]
+  * page    [Page number]
+  * unit    [Unit position]
+  * note    [The notes]
+  * practice  [If have practices]
+  * referdoc  [Reference document]
+  * referurl  [Reference url]
 <tt>rails g scaffold Bknote book_id:integer name:string page:integer unit:string note:text practice:text referdoc:string referurl:string</tt>
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
-`
