@@ -1,56 +1,68 @@
-<%= form_for(@bknote) do |f| %>
+<div class="container">
+  <%= form_for(@bknote) do |f| %>
   <% if @bknote.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bknote.errors.count, "error") %> prohibited this bknote from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@bknote.errors.count, "error") %> prohibited this bknote from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @bknote.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
   
 
-  <div class="field">
-    <%= f.label :book_name %> 【<%= @books.length %>】<br>
-    
-    <%= f.select(:book_id) do %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label :book_name %> 【<%= @books.length %>】<br>
+      <%= f.select(:book_id) do %>
       <% @books.each do |book| %>
-        <%= content_tag(:option, "#{book.name}", value: "#{book.id}") %>
+      <%= content_tag(:option, "#{book.name}", value: "#{book.id}") %>
       <% end %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control", placeholder: "[Note name]" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :page %><br>
+      <%= f.text_field :page, class: "form-control", placeholder: "[Page number]" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :unit %><br>
+      <%= f.text_field :unit, class: "form-control", placeholder: "[Unit position]" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :page %><br>
-    <%= f.text_field :page %>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label :note %><br>
+      <%= f.text_area :note, class: "form-control", placeholder: "[The notes]", rows: 6 %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :practice %><br>
+      <%= f.text_area :practice, class: "form-control", placeholder: "[If have practices]", rows: 6 %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :unit %><br>
-    <%= f.text_field :unit %>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label :referdoc %><br>
+      <%= f.text_field :referdoc, class: "form-control", placeholder: "[Reference document]" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :referurl %><br>
+      <%= f.text_field :referurl, class: "form-control", placeholder: "[Reference url]" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_area :note %>
-  </div>
-  <div class="field">
-    <%= f.label :practice %><br>
-    <%= f.text_area :practice %>
-  </div>
-  <div class="field">
-    <%= f.label :referdoc %><br>
-    <%= f.text_field :referdoc %>
-  </div>
-  <div class="field">
-    <%= f.label :referurl %><br>
-    <%= f.text_field :referurl %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>

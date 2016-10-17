@@ -1,49 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <%= form_for(@blog, :html => {:class=>'', :role=>'form'}) do |f| %>
+  <% if @blog.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+    <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
 
-<p>
-  <strong>Pathw:</strong>
-  <%= @blog.pathw %>
-</p>
-
-<p>
-  <strong>Pathl:</strong>
-  <%= @blog.pathl %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @blog.category %>
-</p>
-
-<p>
-  <strong>Secnario:</strong>
-  <%= @blog.secnario %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @blog.note %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @blog.level %>
-</p>
-
-<p>
-  <strong>Tested:</strong>
-  <%= @blog.tested %>
-</p>
-
-<p>
-  <strong>Referto:</strong>
-  <%= @blog.referto %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class: "form-control", placeholder: "[The title]", readonly: "readonly" %>
+    </div>
+    <div class="field col-md-2">
+      <%= f.label :category %><br>
+      <%= f.text_field :category, class: "form-control", placeholder: "[The category]", readonly: "readonly" %>
+    </div>
+      <div class="field col-md-2">
+        <%= f.label :tested %><br>
+        <%= f.check_box :tested, disabled: "disabled" %>
+      </div>
+      <div class="field col-md-2">
+        <%= f.label :level %><br>
+        <%= f.number_field :level, class: "form-control", placeholder: "[lv1~lv5]", disabled: "disabled" %>
+      </div>
+  </div>
+  <fieldset>
+    <div class="row">
+      <div class="field col-md-6">
+        <%= f.label :pathw %><br>
+        <%= f.text_field :pathw, class: "form-control", placeholder: "[Web path]", readonly: "readonly" %>
+      </div>
+      <div class="field col-md-6">
+        <%= f.label :pathl %><br>
+        <%= f.text_field :pathl, class: "form-control", placeholder: "[Local path]", readonly: "readonly" %>
+    </div>
+    <div class="row">
+      <div class="field col-md-6">
+        <%= f.label :secnario %><br>
+        <%= f.text_area :secnario, class: "form-control", rows: 5, placeholder: "[Issue secnario and use secnario]", readonly: "readonly" %>
+      </div>
+      <div class="field col-md-6">
+        <%= f.label :note %><br>
+        <%= f.text_area :note, class: "form-control",rows: 5, placeholder: "[The notes]", readonly: "readonly" %>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :referto %><br>
+      <%= f.text_field :referto, class: "form-control", placeholder: "[With intro and url. Parse by the specific flag]", readonly: "readonly" %>
+    </div>
+  </fieldset>
+  <% end %>
+  <br>
+  <%= link_to '.Edit', edit_blog_path(@blog), class: "btn btn-default glyphicon glyphicon-edit" %> |
+  <%= link_to '.Back', blogs_path, class: "btn btn-default glyphicon glyphicon-arrow-left" %>
+</div>
+<!--   <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
+  <p contenteditable="false">这是一个可编辑段落。</p> -->

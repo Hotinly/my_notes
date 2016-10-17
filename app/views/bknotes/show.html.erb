@@ -1,44 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Book:</strong>
-  <%= @bknote.book_id %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @bknote.name %>
-</p>
+  <div class="row">
+    <div class="col-md-1">
+      1
+    </div>
 
-<p>
-  <strong>Page:</strong>
-  <%= @bknote.page %>
-</p>
+    <div class="col-md-10">
+      <div class="row">
+        <p class="col-md-3">
+          <strong>Book:</strong>
+          <input type="text" class="form-control" placeholder="[Make relation]" value="<%= @bknote.book_id %>" readonly >
+        </p>
+      </div>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @bknote.unit %>
-</p>
+      <div class="row">
+        <p class="col-md-4">
+          <strong>Name:</strong>
+          <input type="text" class="form-control" placeholder="[Note name]" value="<%= @bknote.name %>" readonly >
+        </p>
 
-<p>
-  <strong>Note:</strong>
-  <%= @bknote.note %>
-</p>
+        <p class="col-md-2">
+          <strong>Page:</strong>
+          <input type="text" class="form-control" placeholder="[Page number]" value="<%= @bknote.page %>" readonly >
+        </p>
 
-<p>
-  <strong>Practice:</strong>
-  <%= @bknote.practice %>
-</p>
+        <p class="col-md-2">
+          <strong>Unit:</strong>
+          <input type="text" class="form-control" placeholder="[Unit position]" value="<%= @bknote.unit %>" readonly >
+        </p>
+      </div>
 
-<p>
-  <strong>Referdoc:</strong>
-  <%= @bknote.referdoc %>
-</p>
+      <div class="row">
+        <p class="col-md-6">
+          <strong>Note:</strong>
+          <textarea class="form-control" rows="6" placeholder="[The notes]" readonly ><%= @bknote.note %></textarea>
+        </p>
+        <p class="col-md-6">
+          <strong>Practice:</strong>
+          <textarea class="form-control" rows="6" placeholder="[If have practices]" readonly ><%= @bknote.practice %></textarea>
+        </p>
+      </div>
 
-<p>
-  <strong>Referurl:</strong>
-  <%= @bknote.referurl %>
-</p>
+      <div class="row">
+        <p class="col-md-6">
+          <strong>Referdoc:</strong>
+          <input type="text" class="form-control" placeholder="[Reference document]" value="<%= @bknote.referdoc %>" readonly >
+        </p>
+        <p class="col-md-6">
+          <strong>Referurl:</strong>
+          <input type="text" class="form-control" placeholder="[Reference url]" value="<%= @bknote.referurl %>" readonly >
+        </p>
+      </div>
 
+    </div>
+    <div class="col-md-1">
+      1
+    </div>
+  </div>
+</div>
 <%= link_to 'Edit', edit_bknote_path(@bknote) %> |
 <%= link_to 'Back', bknotes_path %>

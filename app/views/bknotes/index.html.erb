@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Bknotes</h1>
-<table>
+<div class="container">
+  <!-- <caption>book list</caption> -->
+  <table class="table table-striped">
   <thead>
     <tr>
       <th>Book</th>
@@ -34,7 +36,12 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
+</table>
 
-<%= link_to 'New Bknote', new_bknote_path %>
+<div class="container">
+  <%= link_to 'New Bknote', new_bknote_path, class: "btn btn-default glyphicon glyphicon-plus-sign" %>
+  <%= link_to 'Books', books_path, class: "btn btn-default glyphicon glyphicon-list" %>
+  <%= link_to 'Blogs', blogs_path, class: "btn btn-default glyphicon glyphicon-list" %>
+</div>
