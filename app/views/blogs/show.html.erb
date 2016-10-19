@@ -21,14 +21,14 @@
       <%= f.label :category %><br>
       <%= f.text_field :category, class: "form-control", placeholder: "[The category]", readonly: "readonly" %>
     </div>
-      <div class="field col-md-2">
-        <%= f.label :tested %><br>
-        <%= f.check_box :tested, disabled: "disabled" %>
-      </div>
-      <div class="field col-md-2">
-        <%= f.label :level %><br>
-        <%= f.number_field :level, class: "form-control", placeholder: "[lv1~lv5]", disabled: "disabled" %>
-      </div>
+    <div class="field col-md-2">
+      <%= f.label :tested %><br>
+      <%= f.check_box :tested, disabled: "disabled" %>
+    </div>
+    <div class="field col-md-2">
+      <%= f.label :level %><br>
+      <%= f.number_field :level, class: "form-control", placeholder: "[lv1~lv5]", disabled: "disabled" %>
+    </div>
   </div>
   <fieldset>
     <div class="row">
@@ -39,6 +39,7 @@
       <div class="field col-md-6">
         <%= f.label :pathl %><br>
         <%= f.text_field :pathl, class: "form-control", placeholder: "[Local path]", readonly: "readonly" %>
+      </div>
     </div>
     <div class="row">
       <div class="field col-md-6">

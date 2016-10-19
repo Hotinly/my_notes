@@ -5,10 +5,55 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="width:155px" href="#">Listing</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Home</a></li> -->
+        <li><%= link_to 'Books', books_path %></li>
+        <li><%= link_to 'Bknotes', bknotes_path %></li>
+        <li><%= link_to 'Blogs', blogs_path %></li>
+        <li><a href="http://github.com/Hotinly/my_notes">About</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
 <%= yield %>
 
+<script type="text/javascript">
+// 动态设置scaffold生成的页面中的h1标签(标题)为导航栏的 navbar-brand
+  $(function(){
+    $("h1").hide();
+    $(".navbar-brand").text($("h1").text());
+    // $("ul > li").click(function(){
+    //   var index = $(this).index();
+    //   // alert(index);
+    //   // $("li").attr("class", "active"); 替换样式
+    //   $("li").removeClass("active");
+    //   $("ul > li").eq(index).addClass("active");
+    // })  //添加之后刷新会失效
+
+    // Best way！
+    $('ul.navbar-nav li a').each(function(){
+      if($($(this))[0].href==String(window.location))
+        $(this).parent().addClass('active');
+    });
+
+  })
+</script>
 </body>
 </html>
