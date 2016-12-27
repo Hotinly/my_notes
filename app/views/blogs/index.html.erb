@@ -2,6 +2,20 @@
 
 <h1>Listing Blogs</h1>
 <div class="container">
+  <%= form_tag(blogs_path, :method => "get", class: "navbar-form", role: "search") do %>
+    <div class="input-group  navbar-left">
+      <%= link_to '.New Blog', new_blog_path, class: "btn btn-default glyphicon glyphicon-plus-sign" %>
+      <%= link_to '.Books', books_path, class: "btn btn-default glyphicon glyphicon-list" %>
+      <%= link_to '.Bknotes', bknotes_path, class: "btn btn-default glyphicon glyphicon-list" %>
+    </div>
+    <div class="input-group  navbar-right">
+      <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+      <span class="input-group-btn">
+        <%= submit_tag 'Search', class: "btn btn-info" %>
+      </span>
+    </div>
+  <% end %>
+
 <table class="table table-striped">
   <!-- <caption>blog notes</caption> -->
   <thead>
@@ -37,10 +51,15 @@
     <% end %>
   </tbody>
 </table>
+
+  <% unless @blogs.present? %>
+    <p class="alert alert-info">There are no blogs containing the term => "<%= params[:search] %>".</p>
+  <% end %>
 </div>
 
-<div class="container">
-  <%= link_to 'New Blog', new_blog_path, class: "btn btn-default glyphicon glyphicon-plus-sign" %>
-  <%= link_to 'Books', books_path, class: "btn btn-default glyphicon glyphicon-list" %>
-  <%= link_to 'Bknotes', bknotes_path, class: "btn btn-default glyphicon glyphicon-list" %>
+<div class="apple_pagination">
+  <%= will_paginate @blogs, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @blogs %>
+  </div>
 </div>

@@ -4,7 +4,21 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    if params[:search]
+      puts "666=> |#{params[:search]}|"
+      @blogs = Blog.search(params[:search]).paginate(:page => params[:page], :per_page => 10).order('id DESC')
+      # puts Blog.search(params[:search]).class   # Blog::ActiveRecord_Relation
+      # puts Blog.search(params[:search]).paginate(:page => params[:page], :per_page => 10).order('id DESC').class
+    else
+      puts "777"
+      @blogs = Blog.paginate(:page => params[:page], :per_page => 10).order('id DESC') #:all, :order => "title ASC"
+    end
+
+    # conditions = []
+    # [:mail_from, :mail_to, :subject, :attachment, :domain, :ip, :location, :date, :mailer].each{
+    #   |attr| conditions << Employee.send(:sanitize_sql, ["#{attr} LIKE ?", "%#{params[attr]}%"]) unless params[attr].blank? }
+    # conditions = conditions.any? ? conditions.collect { |c| "(#{c})" }.join(' AND ') : nil
+    # @emails = Email.where(conditions).order("date DESC")
   end
 
   # GET /blogs/1
