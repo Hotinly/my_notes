@@ -2,7 +2,8 @@
 
 <h1>Listing Books</h1>
 <script type="text/javascript">
-  window.onload = function() {
+  $(document).ready(function(){
+  // window.onload = function() {
     var pvws = document.getElementsByTagName('pvw');
     for( var i = 0; i < pvws.length; i++){
       pvws[i].onmouseover = function(){
@@ -23,7 +24,8 @@
         // pvws.removeChild(img);
       }
     }
-  }
+  // }
+  })
 </script>
 
 <div class="container">
