@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013233036) do
+ActiveRecord::Schema.define(version: 20161013051247) do
 
   create_table "bknotes", force: :cascade do |t|
     t.integer  "book_id",    limit: 4
