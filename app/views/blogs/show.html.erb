@@ -59,7 +59,7 @@
   <% end %>
   <br>
   <%= link_to '.Edit', edit_blog_path(@blog), class: "btn btn-default glyphicon glyphicon-edit" %> |
-  <%= link_to '.Back', blogs_path, class: "btn btn-default glyphicon glyphicon-arrow-left" %>
+  <%= link_to '.Back', "javascript: history.go(-1)", class: "btn btn-default glyphicon glyphicon-arrow-left" %>
 </div>
 <!--   <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
   <p contenteditable="false">这是一个可编辑段落。</p> -->
