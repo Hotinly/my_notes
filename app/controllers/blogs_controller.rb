@@ -5,12 +5,12 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     if params[:search]
-      puts "666=> |#{params[:search]}|"
+      puts "Search params=> |#{params[:search]}|"
       @blogs = Blog.search(params[:search]).paginate(:page => params[:page], :per_page => 10).order('id DESC')
       # puts Blog.search(params[:search]).class   # Blog::ActiveRecord_Relation
       # puts Blog.search(params[:search]).paginate(:page => params[:page], :per_page => 10).order('id DESC').class
     else
-      puts "777"
+      puts "There are no parems!"
       @blogs = Blog.paginate(:page => params[:page], :per_page => 10).order('id DESC') #:all, :order => "title ASC"
     end
 
