@@ -48,10 +48,18 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#   database: notes_production
+#   username: holy
+#   password: <%= ENV['NOTES_DATABASE_PASSWORD'] %>
+
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: notes_production
-  username: holy
-  password: <%= ENV['NOTES_DATABASE_PASSWORD'] %>
+  database: postgres://edvvnsbrrhytju:90e5a184465b01d1e51966e6c3e044c494df98efc27222bedd3fad615b420662@ec2-54-243-55-1.compute-1.amazonaws.com:5432/ddaea09a3dklf1
+  username: edvvnsbrrhytju
+  password: 90e5a184465b01d1e51966e6c3e044c494df98efc27222bedd3fad615b420662
